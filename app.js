@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 // middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(helmet())
+// app.use(helmet())
 app.use(cors());
 
 // MongoDb connection setup

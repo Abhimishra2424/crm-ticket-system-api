@@ -1,0 +1,22 @@
+# create new user with api
+# POST http://localhost:5000/v1/user
+# Content-Type: application/json
+
+# {
+#     "name":"sac",
+#     "company":"react js crm",
+#     "address":"mumbai",
+#     "phone":"8655666021",
+#     "email":"sac@gmail.com",
+#     "password":"12345678"
+# }
+
+# user login api
+POST http://localhost:5000/v1/user/login
+Content-Type: application/json
+
+{
+    "email":"sac@gmail.com",
+    "password":"12345678"
+    
+}
