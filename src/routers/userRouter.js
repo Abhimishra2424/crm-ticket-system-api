@@ -1,14 +1,28 @@
 const express = require("express");
+const router = express.Router();
 const { hashPassword, comparePassword } = require("../helpers/bcryptPassword");
 const { createAccessjwt, createRefreshjwt } = require("../helpers/jwthelper");
-const router = express.Router();
-const { insertUser, getUserByEmail } = require("../models/user/Usermodel");
+const { userAuthorization } = require("../middleware/authMiddleware");
+const {
+  insertUser,
+  getUserByEmail,
+  getUserById,
+} = require("../models/user/Usermodel");
 
 router.all("/", (req, res, next) => {
   next();
 });
 
-// create user route
+// Get users profile router
+router.get("/", userAuthorization, async (req, res) => {
+  const _id = req.userId;
+
+  const userProfile = await getUserById(_id);
+
+  res.json({ user: userProfile });
+});
+
+// create new user route
 router.post("/", async (req, res) => {
   const { name, company, address, phone, email, password } = req.body; // destructuring
 
@@ -68,7 +82,7 @@ router.post("/login", async (req, res) => {
   }
 
   const accessJWT = await createAccessjwt(user.email, `${user._id}`);
-  const refreshJWT = await createRefreshjwt(user.email,`${user._id}`);
+  const refreshJWT = await createRefreshjwt(user.email, `${user._id}`);
 
   res.json({
     status: "success",

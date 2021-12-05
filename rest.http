@@ -11,12 +11,15 @@
 #     "password":"12345678"
 # }
 
-# user login api
-POST http://localhost:5000/v1/user/login
-Content-Type: application/json
+# # user login api
+# POST http://localhost:5000/v1/user/login
+# Content-Type: application/json
 
-{
-    "email":"sac@gmail.com",
-    "password":"12345678"
-    
-}
+# {
+#     "email":"abhi@gmail.com",
+#     "password":"12345678"
+# }
+
+# Get user profile endpoint
+GET http://localhost:5000/v1/user
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiaGlAZ21haWwuY29tIiwiaWF0IjoxNjM4NjkyOTMwLCJleHAiOjE2Mzg2OTM4MzB9.zUwFXjrRq9mdbL94G5cdW7zbH3VIvo5S7R4kFuvMcY0

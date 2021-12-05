@@ -18,10 +18,10 @@ All the user API Router follows `/v1/user/`
 
 | #    | ROuters                           | Verbs | Progress | Is Private | Description                                      |
 | ---- | --------------------------------- | ----- | -------- | ---------- | ------------------------------------------------ |
-| 1--- | `/v1/user/login`                  | POST  | TODO     | NO         | Verify user Authentication and return jwt        |
+| 1--- | `/v1/user/login`                  | POST  | Done     | NO         | Verify user Authentication and return jwt        |
 | 2--- | `/v1/user/requset-reset-password` | POST  | TODO     | NO         | Verify email and email pin to reset the password |
 | 3--- | `/v1/user/reset-password`         | PUT   | TODO     | NO         | Replace with new                                 |
-| 4--- | `/v1/user/{id}`                   | GET   | TODO     | yes        | Get users Info                                   |
+| 4--- | `/v1/user`                        | GET   | TODO     | yes        | Get users Info                                   |
 
 ### Ticket API Resources
 
