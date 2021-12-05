@@ -67,7 +67,7 @@ router.post("/login", async (req, res) => {
     });
   }
 
-  const accessJWT = await createAccessjwt(user.email);
+  const accessJWT = await createAccessjwt(user.email, `${user._id}`);
   const refreshJWT = await createRefreshjwt(user.email);
 
   res.json({
