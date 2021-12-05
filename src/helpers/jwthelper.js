@@ -1,5 +1,6 @@
 var jwt = require("jsonwebtoken");
 const { setJWT, getJWT } = require("./redishelper");
+const { storeUserRefreshJWT } = require("../models/user/Usermodel");
 
 const createAccessjwt = async (email, _id) => {
   try {
@@ -15,12 +16,18 @@ const createAccessjwt = async (email, _id) => {
   }
 };
 
-const createRefreshjwt = (payload) => {
-  var refreshJWT = jwt.sign({ payload }, process.env.JWT_REFRESH_SECRET, {
-    expiresIn: "30d",
-  });
+const createRefreshjwt = async (email, _id) => {
+  try {
+    var refreshJWT = jwt.sign({ email }, process.env.JWT_REFRESH_SECRET, {
+      expiresIn: "30d",
+    });
 
-  return Promise.resolve(refreshJWT);
+    await storeUserRefreshJWT(_id, refreshJWT);
+
+    return Promise.resolve(refreshJWT);
+  } catch (error) {
+    return Promise.reject(error);
+  }
 };
 
 module.exports = {

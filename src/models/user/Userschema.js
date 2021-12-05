@@ -4,10 +4,12 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   name: {
     type: String,
+    maxlength: 50,
     required: true,
   },
   company: {
     type: String,
+    maxlength: 50,
     required: true,
   },
   address: {
@@ -16,19 +18,30 @@ const UserSchema = new Schema({
   },
   phone: {
     type: Number,
-    maxlength: 10,
+    maxlength: 11,
   },
   email: {
     type: String,
+    maxlength: 50,
     required: true,
-
-    unique: true,
   },
   password: {
     type: String,
-    required: true,
     minlength: 8,
+    maxlength: 100,
     required: true,
+  },
+  refreshJWT: {
+    token: {
+      type: String,
+      maxlength: 500,
+      default: "",
+    },
+    addedAt: {
+      type: Date,
+      required: true,
+      default: Date.now(),
+    },
   },
 });
 
