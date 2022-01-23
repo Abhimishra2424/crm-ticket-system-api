@@ -11,7 +11,7 @@
 #     "password":"12345678"
 # }
 
-# user login api
+# # user login api
 # POST http://localhost:5000/v1/user/login
 # Content-Type: application/json
 
@@ -22,7 +22,7 @@
 
 # # Get user profile endpoint
 # GET http://localhost:5000/v1/user
-# Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiaGlAZ21haWwuY29tIiwiaWF0IjoxNjM4NjkyOTMwLCJleHAiOjE2Mzg2OTM4MzB9.zUwFXjrRq9mdbL94G5cdW7zbH3VIvo5S7R4kFuvMcY0
+# Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiaGltQGdtYWlsLmNvbSIsImlhdCI6MTY0MjkwNDA4MywiZXhwIjoxNjQyOTA0OTgzfQ.9UL0tx9YFuoYhwhgAWqAMdH1xKo2dn3_31zRhOyy2qc
 
 
 # # # Get new token

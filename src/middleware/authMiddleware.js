@@ -1,5 +1,5 @@
 const { verifyAccessJWT } = require("../helpers/jwthelper");
-const { getJWT } = require("../helpers/redishelper");
+const { getJWT, deleteJWT } = require("../helpers/redishelper");
 
 const userAuthorization = async (req, res, next) => {
   const { authorization } = req.headers;
@@ -16,6 +16,9 @@ const userAuthorization = async (req, res, next) => {
     req.userId = userId;
     return next();
   }
+
+  deleteJWT(authorization);
+
   return res.status(403).json({
     message: "You are not authorized to access this route",
   });
