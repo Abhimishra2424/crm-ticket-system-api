@@ -12,13 +12,14 @@ router.get("/", async (req, res) => {
 
     if (userProfile._id) {
       let tokenExp = userProfile.refreshJWT.addedAt;
+      const dBrefreshToken = userProfile.refreshJWT.token;
 
       tokenExp = tokenExp.setDate(
         tokenExp.getDate() + +process.env.JWT_REFRESH_SECRET_EXP_DAY
       );
       const today = new Date();
 
-      if (tokenExp < today) {
+      if (dBrefreshToken !== authorization && tokenExp < today) {
         return res.status(403).json({
           message: "forbidden",
         });
@@ -28,6 +29,10 @@ router.get("/", async (req, res) => {
         decoded.email,
         userProfile._id.toString()
       );
+      // Delete old token
+
+
+
 
       return res.json({
         status: "success",
