@@ -92,14 +92,20 @@ router.post("/login", async (req, res) => {
   });
 });
 
-router.post("/reset-password", (req, res) => {
+router.post("/reset-password", async (req, res) => {
   const { email } = req.body;
 
+  const user = await getUserByEmail(email);
+
+  if(user && user._id) {
+     
+  }
+ 
   res.json({
-    status: "success",
-    message: "Password reset link sent to your email",
-    email,
+    status: "error",
+    message: "If the email is registered with us, we will send you a password reset link",
   });
+
 });
 
 module.exports = router;

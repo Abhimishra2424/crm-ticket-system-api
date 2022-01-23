@@ -35,5 +35,5 @@ POST http://localhost:5000/v1/user/reset-password
 Content-Type: application/json
 
 {
-    "email":"abhim@gmail.com"
+    "email":"abhi@gmail.com"
 }
