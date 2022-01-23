@@ -92,4 +92,14 @@ router.post("/login", async (req, res) => {
   });
 });
 
+router.post("/reset-password", (req, res) => {
+  const { email } = req.body;
+
+  res.json({
+    status: "success",
+    message: "Password reset link sent to your email",
+    email,
+  });
+});
+
 module.exports = router;
