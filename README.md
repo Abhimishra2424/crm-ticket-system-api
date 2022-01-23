@@ -34,3 +34,9 @@ All the user API Router follows `/v1/ticket/`
 | 3--- | `/v1/ticket}`                  | POST  | TODO     | yes        | create a new ticket                    |
 | 2--- | `/v1/ticket/{id}`              | PUT   | TODO     | Yes        | Update ticket details is reply message |
 | 4--- | `/v1/ticket/close-ticket/{id}` | PUT   | TODO     | yes        | Update ticket details is reply message |
+
+All the Tokens API router follows `/v1/tokens/`
+
+| #    | Routers      | Verbs | Progress | Is Private | Description            |
+| ---- | ------------ | ----- | -------- | ---------- | ---------------------- |
+| 1--- | `/v1/tokens` | GET   | Done     | NO         | Get a fresh access JWT |

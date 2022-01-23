@@ -3,23 +3,28 @@
 # Content-Type: application/json
 
 # {
-#     "name":"sac",
+#     "name":"abhi",
 #     "company":"react js crm",
 #     "address":"mumbai",
 #     "phone":"8655666021",
-#     "email":"sac@gmail.com",
+#     "email":"abhim@gmail.com",
 #     "password":"12345678"
 # }
 
-# # user login api
+# user login api
 # POST http://localhost:5000/v1/user/login
 # Content-Type: application/json
 
 # {
-#     "email":"abhi@gmail.com",
+#     "email":"abhim@gmail.com",
 #     "password":"12345678"
 # }
 
-# Get user profile endpoint
-GET http://localhost:5000/v1/user
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiaGlAZ21haWwuY29tIiwiaWF0IjoxNjM4NjkyOTMwLCJleHAiOjE2Mzg2OTM4MzB9.zUwFXjrRq9mdbL94G5cdW7zbH3VIvo5S7R4kFuvMcY0
+# # Get user profile endpoint
+# GET http://localhost:5000/v1/user
+# Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiaGlAZ21haWwuY29tIiwiaWF0IjoxNjM4NjkyOTMwLCJleHAiOjE2Mzg2OTM4MzB9.zUwFXjrRq9mdbL94G5cdW7zbH3VIvo5S7R4kFuvMcY0
+
+
+# # # Get new token
+# GET http://localhost:5000/v1/tokens
+# Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiaGltQGdtYWlsLmNvbSIsImlhdCI6MTY0MjkwMzIyOCwiZXhwIjoxNjQyOTA0MTI4fQ.HPcDwLkPRq1d3Gyq7MGH1cK2KDL_ftx6h3N6lzXTE6s
