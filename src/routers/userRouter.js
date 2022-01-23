@@ -3,6 +3,7 @@ const router = express.Router();
 const { hashPassword, comparePassword } = require("../helpers/bcryptPassword");
 const { createAccessjwt, createRefreshjwt } = require("../helpers/jwthelper");
 const { userAuthorization } = require("../middleware/authMiddleware");
+const { setPasswordRestPin } = require("../models/resetPin/ResetPinmodel");
 const {
   insertUser,
   getUserByEmail,
@@ -97,15 +98,16 @@ router.post("/reset-password", async (req, res) => {
 
   const user = await getUserByEmail(email);
 
-  if(user && user._id) {
-     
+  if (user && user._id) {
+    const setpin = await setPasswordRestPin(email);
+    return res.json(setpin);
   }
- 
+
   res.json({
     status: "error",
-    message: "If the email is registered with us, we will send you a password reset link",
+    message:
+      "If the email is registered with us, we will send you a password reset link",
   });
-
 });
 
 module.exports = router;
