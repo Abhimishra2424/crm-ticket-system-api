@@ -40,3 +40,6 @@ All the Tokens API router follows `/v1/tokens/`
 | #    | Routers      | Verbs | Progress | Is Private | Description            |
 | ---- | ------------ | ----- | -------- | ---------- | ---------------------- |
 | 1--- | `/v1/tokens` | GET   | Done     | NO         | Get a fresh access JWT |
+
+
+<!-- Time to start 8:03:54 -->
