@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 const send = (info) => {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       // send mail with defined transport object
       let result = await transporter.sendMail(info);
@@ -27,7 +27,7 @@ const send = (info) => {
   });
 };
 
-const eamilProcessor = (email, pin) => {
+const emailProcessor = (email, pin) => {
   const info = {
     from: '"CRM👻" <jerald.beahan34@ethereal.email>', // sender address
     to: email, // list of receivers
@@ -36,7 +36,7 @@ const eamilProcessor = (email, pin) => {
       "Here is your password reset pin " +
       pin +
       "This pin will expires in 1 day", // plain text body
-    html: `<b>Hello Users?
+    html: `<b>This is your password reset Pin?
       <b>${pin}</b>
     </b>`, // html body
   };
@@ -45,5 +45,5 @@ const eamilProcessor = (email, pin) => {
 };
 
 module.exports = {
-  eamilProcessor,
+  emailProcessor,
 };
