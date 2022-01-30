@@ -16,8 +16,8 @@
 # Content-Type: application/json
 
 # {
-#     "email":"abhim@gmail.com",
-#     "password":"12345678"
+#     "email":"abhi@gmail.com",
+#     "password":"updatedpassword"
 # }
 
 # # Get user profile endpoint
@@ -30,7 +30,7 @@
 # Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiaGltQGdtYWlsLmNvbSIsImlhdCI6MTY0MjkwMzIyOCwiZXhwIjoxNjQyOTA0MTI4fQ.HPcDwLkPRq1d3Gyq7MGH1cK2KDL_ftx6h3N6lzXTE6s
 
 
-# # # # password reset Endpoint
+# # # password reset pin Endpoint
 # POST http://localhost:5000/v1/user/reset-password
 # Content-Type: application/json
 
@@ -39,12 +39,12 @@
 # }
 
 
-# Update reset password end point
+# # Update reset password end point
 PATCH  http://localhost:5000/v1/user/reset-password
 Content-Type: application/json
 
 {
     "email":"abhi@gmail.com",
-    "pin" :880712,
-    "password":"12345678"
+    "pin" :258160,
+    "password":"updatedpassword"
 }
