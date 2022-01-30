@@ -31,9 +31,20 @@
 
 
 # # # # password reset Endpoint
-POST http://localhost:5000/v1/user/reset-password
+# POST http://localhost:5000/v1/user/reset-password
+# Content-Type: application/json
+
+# {
+#     "email":"abhi@gmail.com"
+# }
+
+
+# Update reset password end point
+PATCH  http://localhost:5000/v1/user/reset-password
 Content-Type: application/json
 
 {
-    "email":"abhi@gmail.com"
+    "email":"abhi@gmail.com",
+    "pin" :880712,
+    "password":"12345678"
 }
