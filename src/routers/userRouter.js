@@ -125,6 +125,9 @@ router.post("/reset-password", async (req, res) => {
 });
 
 router.patch("/reset-password", async (req, res) => {
+
+  const { email, pin, newPassword } = req.body;
+
   res.json(req.body)
 })
 
