@@ -7,6 +7,7 @@ const { userAuthorization } = require("../middleware/authMiddleware");
 const {
   setPasswordRestPin,
   getPinByEmailPin,
+  deletePin,
 } = require("../models/resetPin/ResetPinmodel");
 const {
   insertUser,
@@ -107,7 +108,7 @@ router.post("/reset-password", async (req, res) => {
     const setPin = await setPasswordRestPin(email);
     await emailProcessor({
       email,
-      Pin: setPin.pin,
+      pin: setPin.pin,
       type: "request-new-password",
     });
 
@@ -145,8 +146,8 @@ router.patch("/reset-password", async (req, res) => {
     if (user._id) {
       await emailProcessor({ email, type: "password-update-success" });
 
+      deletePin(email, pin);
 
-      
       return res.json({
         status: "success",
         message: "Password updated successfully",
