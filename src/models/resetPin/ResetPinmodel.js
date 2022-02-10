@@ -37,10 +37,20 @@ const getPinByEmailPin = (email, pin) => {
   });
 };
 
-
-
+const deletePin = (email, pin) => {
+  try {
+    ResetPinSchema.findOneAndDelete({ email, pin }, (error, data) => {
+      if (error) {
+        console.log(error);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 module.exports = {
   setPasswordRestPin,
   getPinByEmailPin,
+  deletePin,
 };
