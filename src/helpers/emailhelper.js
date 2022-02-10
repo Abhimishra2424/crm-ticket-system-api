@@ -27,21 +27,42 @@ const send = (info) => {
   });
 };
 
-const emailProcessor = (email, pin) => {
-  const info = {
-    from: '"CRM👻" <jerald.beahan34@ethereal.email>', // sender address
-    to: email, // list of receivers
-    subject: "Password reset Pin", // Subject line
-    text:
-      "Here is your password reset pin " +
-      pin +
-      "This pin will expires in 1 day", // plain text body
-    html: `<b>This is your password reset Pin?
-      <b>${pin}</b>
-    </b>`, // html body
-  };
+const emailProcessor = ({ email, pin, type }) => {
+  let info = "";
 
-  send(info);
+  switch (type) {
+    case "request-new-password":
+      info = {
+        from: '"CRM👻" <jerald.beahan34@ethereal.email>', // sender address
+        to: email, // list of receivers
+        subject: "Password reset Pin", // Subject line
+        text:
+          "Here is your password reset pin " +
+          pin +
+          "This pin will expires in 1 day", // plain text body
+        html: `<b>This is your password reset Pin?
+        <b>${pin}</b>
+      </b>`, // html body
+      };
+
+      send(info);
+      break;
+
+    case "password-update-success":
+      info = {
+        from: '"CRM👻" <jerald.beahan34@ethereal.email>', // sender address
+        to: email, // list of receivers
+        subject: "password updated", // Subject line
+        text: "Your password has been updated successfully", // plain text body
+        html: `<b>Your password has been updated successfully</b>`, // html body
+      };
+
+      send(info);
+      break;
+
+    default:
+      break;
+  }
 };
 
 module.exports = {

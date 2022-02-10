@@ -37,6 +37,9 @@ const getPinByEmailPin = (email, pin) => {
   });
 };
 
+
+
+
 module.exports = {
   setPasswordRestPin,
   getPinByEmailPin,

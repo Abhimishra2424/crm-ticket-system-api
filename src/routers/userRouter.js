@@ -105,7 +105,11 @@ router.post("/reset-password", async (req, res) => {
 
   if (user && user._id) {
     const setPin = await setPasswordRestPin(email);
-    await emailProcessor(email, setPin.pin);
+    await emailProcessor({
+      email,
+      Pin: setPin.pin,
+      type: "request-new-password",
+    });
 
     return res.json({
       status: "success",
@@ -139,6 +143,10 @@ router.patch("/reset-password", async (req, res) => {
     const hashedPass = await hashPassword(password);
     const user = await updatePassword(email, hashedPass);
     if (user._id) {
+      await emailProcessor({ email, type: "password-update-success" });
+
+
+      
       return res.json({
         status: "success",
         message: "Password updated successfully",
