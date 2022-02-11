@@ -11,7 +11,7 @@
 #     "password":"12345678"
 # }
 
-# # user login api
+# # # user login api
 # POST http://localhost:5000/v1/user/login
 # Content-Type: application/json
 
@@ -48,3 +48,8 @@
 #     "pin" :052985,
 #     "password":"updatedpassword"
 # }
+
+# user logout endpoint
+
+# DELETE  http://localhost:5000/v1/user/logout
+# Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiaGltQGdtYWlsLmNvbSIsImlhdCI6MTY0NDU4Njk3OCwiZXhwIjoxNjQ0NTg3ODc4fQ.bnCCv_-PWAJNP7zir8fLo0vXJ76fMHTAeUiaP9nYzbg

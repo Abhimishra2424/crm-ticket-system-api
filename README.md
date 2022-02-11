@@ -16,12 +16,13 @@ Note : Make sure you have nodemon is installed in your system otherwise you can 
 
 All the user API Router follows `/v1/user/`
 
-| #    | ROuters                           | Verbs | Progress | Is Private | Description                                      |
-| ---- | --------------------------------- | ----- | -------- | ---------- | ------------------------------------------------ |
-| 1--- | `/v1/user/login`                  | POST  | Done     | NO         | Verify user Authentication and return jwt        |
-| 2--- | `/v1/user/reset-password` | POST  | TODO     | NO         | Verify email and email pin to reset the password |
-| 3--- | `/v1/user/reset-password`         | PATCH   | TODO     | NO         | Replace with new                                 |
-| 4--- | `/v1/user`                        | GET   | TODO     | yes        | Get users Info                                   |
+| #    | ROuters                   | Verbs  | Progress | Is Private | Description                                      |
+| ---- | ------------------------- | ------ | -------- | ---------- | ------------------------------------------------ |
+| 1--- | `/v1/user/login`          | POST   | Done     | NO         | Verify user Authentication and return jwt        |
+| 2--- | `/v1/user/reset-password` | POST   | TODO     | NO         | Verify email and email pin to reset the password |
+| 3--- | `/v1/user/reset-password` | PATCH  | TODO     | NO         | Replace with new                                 |
+| 4--- | `/v1/user`                | GET    | TODO     | yes        | Get users Info                                   |
+| 5--- | `/v1/user/logout`         | DELETE | TODO     | yes        | Delete user accessJWT                            |
 
 ### Ticket API Resources
 
@@ -41,5 +42,3 @@ All the Tokens API router follows `/v1/tokens/`
 | ---- | ------------ | ----- | -------- | ---------- | ---------------------- |
 | 1--- | `/v1/tokens` | GET   | Done     | NO         | Get a fresh access JWT |
 
-
-<!-- Time to start 8:52:32 -->
