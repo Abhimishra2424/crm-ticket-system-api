@@ -17,7 +17,7 @@
 
 # {
 #     "email":"abhi@gmail.com",
-#     "password":"updatedpassword"
+#     "password":"newpassword"
 # }
 
 # # Get user profile endpoint
@@ -40,11 +40,11 @@
 
 
 # # Update reset password end point
-PATCH  http://localhost:5000/v1/user/reset-password
-Content-Type: application/json
+# PATCH  http://localhost:5000/v1/user/reset-password
+# Content-Type: application/json
 
-{
-    "email":"abhi@gmail.com",
-    "pin" :258160,
-    "password":"updatedpassword"
-}
+# {
+#     "email":"abhi@gmail.com",
+#     "pin" :052985,
+#     "password":"updatedpassword"
+# }

@@ -4,6 +4,7 @@ const { hashPassword, comparePassword } = require("../helpers/bcryptPassword");
 const { emailProcessor } = require("../helpers/emailhelper");
 const { createAccessjwt, createRefreshjwt } = require("../helpers/jwthelper");
 const { userAuthorization } = require("../middleware/authMiddleware");
+const { resetPassReqValidation, updatePassValidation } = require("../middleware/formValidationMiddleware");
 const {
   setPasswordRestPin,
   getPinByEmailPin,
@@ -99,7 +100,7 @@ router.post("/login", async (req, res) => {
   });
 });
 
-router.post("/reset-password", async (req, res) => {
+router.post("/reset-password",resetPassReqValidation , async (req, res) => {
   const { email } = req.body;
 
   const user = await getUserByEmail(email);
@@ -126,7 +127,7 @@ router.post("/reset-password", async (req, res) => {
   });
 });
 
-router.patch("/reset-password", async (req, res) => {
+router.patch("/reset-password", updatePassValidation, async (req, res) => {
   const { email, pin, password } = req.body;
   const getPin = await getPinByEmailPin(email, pin);
   if (getPin._id) {
