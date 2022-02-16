@@ -1,4 +1,5 @@
 const express = require("express");
+const { insertTicket } = require("../models/ticket/Ticketmodel");
 const router = express.Router();
 
 router.all("/", (req, res, next) => {
@@ -16,15 +17,39 @@ router.all("/", (req, res, next) => {
 // 4. insert new ticket to db
 // 5. return new ticket to client
 
-router.post("/", (req, res) => {
-  const { subject, sender, message } = req.body;
+router.post("/", async (req, res) => {
+  try {
+    const { subject, sender, message } = req.body;
 
-  // insert new ticket to db
-  
+    const ticketobj = {
+      clientId: "620667b9d7f4343dc8d33fb1",
+      subject,
+      conversations: [
+        {
+          sender,
+          message,
+          msgAt: Date.now(),
+        },
+      ],
+    };
 
-  res.json({
-    message: "return ticket",
-  });
+    // insert new ticket to db
+    const result = await insertTicket(ticketobj);
+    if (result._id) {
+      res.json({
+        status: "success",
+        message: "New ticket created",
+        data: result,
+      });
+    }
+
+    res.json({
+      status: "error",
+      message: "Failed to create new ticket",
+    });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;
