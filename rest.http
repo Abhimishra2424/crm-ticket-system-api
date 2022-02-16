@@ -3,12 +3,12 @@
 # Content-Type: application/json
 
 # {
-#     "name":"abhi",
+#     "name":"sac",
 #     "company":"react js crm",
 #     "address":"mumbai",
 #     "phone":"8655666021",
-#     "email":"abhim@gmail.com",
-#     "password":"12345678"
+#     "email":"sac@gmail.com",
+#     "password":"123456789"
 # }
 
 # # # user login api
@@ -35,17 +35,17 @@
 # Content-Type: application/json
 
 # {
-#     "email":"abhi@gmail.com"
+#     "email":"sac@gmail.com"
 # }
 
 
-# # Update reset password end point
+# Update reset password end point
 # PATCH  http://localhost:5000/v1/user/reset-password
 # Content-Type: application/json
 
 # {
-#     "email":"abhi@gmail.com",
-#     "pin" :052985,
+#     "email":"sac@gmail.com",
+#     "pin" : 752760,
 #     "password":"updatedpassword"
 # }
 
